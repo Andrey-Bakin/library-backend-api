@@ -1,16 +1,19 @@
 const express = require('express');
 const dotenv = require('dotenv');
+const bodyParser = require('body-parser');
+const cors = require('cors');
 const userRouter = require('./routes/users');
 const bookRouter = require('./routes/books');
 const notFound = require('./middlewares/notFound');
 const originalUrl = require('./middlewares/originslUrl');
 const app = express();
+
 dotenv.config();
-
-
 
 const { PORT, API_URL } = process.env;
 
+app.use(cors());
+app.use(bodyParser.json());
 app.use(userRouter);
 app.use(bookRouter);
 app.use(notFound);
