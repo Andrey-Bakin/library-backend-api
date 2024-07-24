@@ -72,7 +72,6 @@ const deleteUser = (req, res) => {
 };
 
 module.exports = {
-  getMain,
   getUsers,
   getUser,
   createUser,

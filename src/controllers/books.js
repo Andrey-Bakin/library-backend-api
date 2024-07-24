@@ -1,6 +1,6 @@
 const Book = require("../models/book");
 
-//список всех книг из БД
+//список всех книг
 const getBooks = (req, res) => {
   Book.find({})
     .then((book) => {
